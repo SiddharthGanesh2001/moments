@@ -1,54 +1,42 @@
-# Moments
-
-A photo sharing social networking app built with Python and Flask. The example application for the book *[Python Web Development with Flask (2nd edition)](https://helloflask.com/en/book/4)* (《[Flask Web 开发实战（第 2 版）](https://helloflask.com/book/4)》).
-
-Demo: http://moments.helloflask.com
-
-![Screenshot](demo.png)
-
-## Installation
+# Installation - Setup for Moments
 
 Clone the repo:
 
-```
-$ git clone https://github.com/greyli/moments
+$ git clone https://github.com/SiddharthGanesh2001/moments.git
+
 $ cd moments
-```
 
-Install dependencies with [PDM](https://pdm.fming.dev):
+$ git checkout generate-alt-tag
 
-```
-$ pdm install
-```
+Create a virtual environment and activate it:
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
-> [!TIP]
-> If you don't have PDM installed, you can create a virtual environment with `venv` and install dependencies with `pip install -r requirements.txt`.
+pip install -r requirements.txt
+pip install --upgrade azure-cognitiveservices-vision-computervision
 
-To initialize the app, run the `flask init-app` command:
 
-```
-$ pdm run flask init-app
-```
+Create a .env file in the root directory and add the following from azure computer vision services:
+endpoint="YOUR_ENDPOINT"
+key="YOUR_SECRET_KEY"
 
-If you just want to try it out, generate fake data with `flask lorem` command then run the app:
+# Setup for Azure for your private key and enpoint!
+- Sign up for the a student account for Microsoft Azure: https://azure.microsoft.com/en-us/free/students/ – no credit card required
 
-```
-$ pdm run flask lorem
-```
+- Create an instance of the Computer Vision service and get an API endpoint of your instance of the service.
 
-It will create a test account:
+- Get a subscription key to authorize your script to call the Computer Vision API.
 
-* email: `admin@helloflask.com`
-* password: `moments`
+- Update the code with the endpoint and key and test it
 
-Now you can run the app:
 
-```
-$ pdm run flask run
-* Running on http://127.0.0.1:5000/
-```
 
-## License
+Initialize and run the program:
+flask init
+flask run
 
-This project is licensed under the MIT License (see the
-[LICENSE](LICENSE) file for details).
+
+
+
+NOTE: you can also use PDM to install dependencies and run the program, check out the readme file of the moments repository.
+
